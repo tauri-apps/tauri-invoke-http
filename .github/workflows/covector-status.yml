@@ -13,4 +13,3 @@ jobs:
         uses: jbolda/covector/packages/action@covector-v0
         with:
           command: 'status'
-{{{{/raw}}}}

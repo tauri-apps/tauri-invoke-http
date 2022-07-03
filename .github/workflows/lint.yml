@@ -33,4 +33,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --manifest-path=Cargo.toml --all-targets --all-features -- -D warnings
           name: clippy
-{{{{/raw}}}}

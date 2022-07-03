@@ -28,4 +28,3 @@ jobs:
       with:
         command: fmt
         args: --manifest-path=Cargo.toml --all -- --check
-{{{{/raw}}}}

@@ -78,4 +78,3 @@ jobs:
       with:
         command: test
         args: --manifest-path=Cargo.toml --release
-{{{{/raw}}}}
