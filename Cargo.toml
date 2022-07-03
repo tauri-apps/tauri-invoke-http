@@ -17,7 +17,7 @@ exclude = [
 ]
 
 [dependencies]
-tauri = "1.0.0-rc.3"
+tauri = "1.0.2"
 tiny_http = "0.9"
 portpicker = "0.1"
 serde_json = "1.0"
