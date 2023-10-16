@@ -55,7 +55,7 @@ impl Invoke {
           continue;
         }
         let url = request.url().to_string();
-        let pieces = url.split("/").collect::<Vec<_>>();
+        let pieces = url.split('/').collect::<Vec<_>>();
         let window_label = pieces[1];
 
         if let Some(window) = app.get_window(window_label) {
@@ -73,7 +73,7 @@ impl Invoke {
           } else {
             unimplemented!()
           };
-          let req_key = payload.callback.0.clone();
+          let req_key = payload.callback.0;
           requests.lock().unwrap().insert(req_key, request);
           let _ = window.on_message(payload);
         } else {
