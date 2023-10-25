@@ -10,11 +10,9 @@ fn my_command(args: u64) -> Result<String, ()> {
 }
 
 fn main() {
-  let http = tauri_invoke_http::Invoke::new(if cfg!(feature = "custom-protocol") {
-    if cfg!(windows) { ["https://tauri.localhost"] } else { ["tauri://localhost"] }
-  } else {
-    ["http://127.0.0.1:1430"]
-  });
+  /// Allow from all origins for testing purposes. 
+  /// Should be allow listed to reduce risks of accidential exposure to other networks.
+  let http = tauri_invoke_http::Invoke::new(["*"]});
   tauri::Builder::default()
     .invoke_system(http.initialization_script(), http.responder())
     .setup(move |app| {

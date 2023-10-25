@@ -29,7 +29,9 @@
       "active": false
     },
     "allowlist": {
-      "all": false
+      "process" : {
+        "exit" : true
+      }
     },
     "windows": [
       {
