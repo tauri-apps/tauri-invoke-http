@@ -14,7 +14,9 @@ use tauri::{
 use tiny_http::{Header, Method, Request, Response};
 
 fn cors<R: std::io::Read>(request: &Request, r: &mut Response<R>, allowed_origins: &[String]) {
-  if let Some(origin) = request.headers().iter().find(|h| h.field.equiv("Origin")) {
+  if allowed_origins.contains("*") {
+    r.add_header(Header::from_str("Access-Control-Allow-Origin: *").unwrap();
+  } else if let Some(origin) = request.headers().iter().find(|h| h.field.equiv("Origin")) {
     if allowed_origins.iter().any(|o| o == &origin.value) {
       r.add_header(
         Header::from_str(&format!("Access-Control-Allow-Origin: {}", origin.value)).unwrap(),
