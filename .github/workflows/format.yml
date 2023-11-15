@@ -23,7 +23,5 @@ jobs:
         with:
           components: rustfmt
 
-      - uses: actions-rs/cargo@v1
-        with:
-          command: fmt
-          args: --manifest-path=Cargo.toml --all -- --check
+      - name: Run formatter
+        run: cargo fmt --manifest-path=Cargo.toml --all -- --check
