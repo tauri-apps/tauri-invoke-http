@@ -37,7 +37,4 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Run tests
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
-          args: --manifest-path=Cargo.toml --release
+        run: cargo test --manifest-path=Cargo.toml --release
