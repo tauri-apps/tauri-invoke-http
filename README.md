@@ -9,7 +9,7 @@ First, add the dependency to your `src-tauri/Cargo.toml` file:
 
 ```
 [dependencies]
-tauri-invoke-http = { git = "https://github.com/tauri-apps/tauri-invoke-http", branch = "dev" }
+tauri-invoke-http = "0.1"
 ```
 
 Then, setup the HTTP invoke system on the `main.rs` file:

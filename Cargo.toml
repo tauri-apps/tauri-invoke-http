@@ -2,7 +2,7 @@
 name = "tauri-invoke-http"
 version = "0.0.0"
 edition = "2021"
-rust-version = "1.56"
+rust-version = "1.60"
 authors = [ "Tauri Programme within The Commons Conservancy" ]
 categories = [ "gui", "web-programming" ]
 license = "Apache-2.0 OR MIT"
