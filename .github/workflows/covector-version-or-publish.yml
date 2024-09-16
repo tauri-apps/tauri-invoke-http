@@ -41,6 +41,7 @@ jobs:
 
       - name: create pull request
         id: cpr
+        if: steps.covector.outputs.commandRan == 'version'
         uses: tauri-apps/create-pull-request@v3
         with:
           title: "Publish New Versions"
