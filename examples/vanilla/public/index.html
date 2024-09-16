@@ -4,13 +4,22 @@
   <div>
     HTTP Invoke
     <div id="response"></div>
+    <div id="response-raw"></div>
   </div>
   <script>
     const response = document.getElementById('response');
-    window.__TAURI__.invoke('my_command', { args: 5 }).then(data => {
+    const responseRaw = document.getElementById('response-raw');
+
+    window.__TAURI__.core.invoke('my_command', { args: 5 }).then(data => {
       response.innerText = data;
     }).catch(error => {
-      response.innerText = error;
+      response.innerText = `error: ${error}`;
+    });
+
+    window.__TAURI__.core.invoke('my_command_raw', new TextEncoder().encode("payload")).then(data => {
+      responseRaw.innerText = new TextDecoder().decode(data);
+    }).catch(error => {
+      responseRaw.innerText = `error: ${error}`;
     });
   </script>
 </body>

@@ -23,7 +23,7 @@ fn main() {
     ["http://localhost:8080"]
   });
   tauri::Builder::default()
-    .invoke_system(http.initialization_script(), http.responder())
+    .invoke_system(http.initialization_script())
     .setup(move |app| {
       http.start(app.handle());
       Ok(())
