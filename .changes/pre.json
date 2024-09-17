@@ -1,0 +1,6 @@
+{
+  "tag": "rc",
+  "changes": [
+    ".changes/initial-release.md"
+  ]
+}
