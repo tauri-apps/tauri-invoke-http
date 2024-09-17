@@ -1,8 +1,8 @@
 [package]
 name = "tauri-invoke-http"
-version = "0.1.0"
+version = "2.0.0-rc.0"
 edition = "2021"
-rust-version = "1.60"
+rust-version = "1.75"
 authors = [ "Tauri Programme within The Commons Conservancy" ]
 categories = [ "gui", "web-programming" ]
 license = "Apache-2.0 OR MIT"
@@ -17,7 +17,12 @@ exclude = [
 ]
 
 [dependencies]
-tauri = "1"
-tiny_http = "0.12"
+anyhow = "1"
+tauri = { version = "2.0.0-rc.15", features = ["test"] }
+hyper = { version = "1", features = ["server"] }
+pin-project-lite = "0.2"
+http-body-util = "0.1"
 portpicker = "0.1"
 serde_json = "1.0"
+tokio = { version = "1", features = ["net"] }
+log = "0.4"
