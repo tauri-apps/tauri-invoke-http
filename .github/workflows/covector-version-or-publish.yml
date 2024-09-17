@@ -29,7 +29,7 @@ jobs:
       - name: install Linux dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y webkit2gtk-4.0
+          sudo apt-get install -y webkit2gtk-4.1
 
       - name: covector version-or-publish
         uses: jbolda/covector/packages/action@covector-v0
