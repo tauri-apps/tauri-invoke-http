@@ -56,7 +56,6 @@ const port = __PORT__;
       },
     })
       .then((response) => {
-        console.log("res", response.headers.get("Tauri-Response"));
         const cb =
           response.headers.get("Tauri-Response") === "ok" ? callback : error;
         // we need to split here because on Android the content-type gets duplicated
