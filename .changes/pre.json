@@ -1,6 +1,7 @@
 {
   "tag": "rc",
   "changes": [
+    ".changes/fix-parse-command-name.md",
     ".changes/initial-release.md"
   ]
 }
