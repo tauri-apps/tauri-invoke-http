@@ -3127,6 +3127,7 @@ dependencies = [
  "http-body-util",
  "hyper",
  "log",
+ "percent-encoding",
  "pin-project-lite",
  "portpicker",
  "serde_json",
