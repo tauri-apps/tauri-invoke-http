@@ -16,6 +16,7 @@ use hyper::{
   service::service_fn,
   HeaderMap, Method, Request, Response, StatusCode,
 };
+use percent_encoding::percent_decode_str;
 use tauri::{
   http::HeaderName,
   ipc::{CallbackFn, InvokeBody, InvokeResponse},
@@ -166,7 +167,7 @@ async fn handle_request<R: Runtime>(
   let url = request.uri().to_string();
   let pieces = url.split('/').collect::<Vec<_>>();
   let window_label = pieces[1];
-  let cmd = pieces[2];
+  let cmd = percent_decode_str(pieces[2]).decode_utf8()?;
 
   if let Some(window) = app.get_webview_window(window_label) {
     let content_type = request

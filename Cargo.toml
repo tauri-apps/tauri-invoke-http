@@ -26,3 +26,4 @@ portpicker = "0.1"
 serde_json = "1.0"
 tokio = { version = "1", features = ["net"] }
 log = "0.4"
+percent-encoding = "2.3"
