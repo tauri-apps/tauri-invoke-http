@@ -40,7 +40,7 @@ impl Cors for ResponseBuilder {
       );
     } else if let Some((_, origin)) = request_headers
       .iter()
-      .find(|(name, _value)| name.as_str() == "Origin")
+      .find(|(name, _value)| name.as_str().eq_ignore_ascii_case("origin"))
     {
       if allowed_origins
         .iter()
